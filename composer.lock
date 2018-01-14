@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f57156f9175dee5c127ceb14af1f309",
+    "content-hash": "fee692b10a44184960dc7dc40e7bd249",
     "packages": [
         {
             "name": "http-interop/http-factory",
@@ -452,50 +452,6 @@
                 "routing"
             ],
             "time": "2017-01-19T11:35:12+00:00"
-        },
-        {
-            "name": "northwoods/container",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/northwoods/container.git",
-                "reference": "8147020b055dd7e3607536d57e1fd14809b40027"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/northwoods/container/zipball/8147020b055dd7e3607536d57e1fd14809b40027",
-                "reference": "8147020b055dd7e3607536d57e1fd14809b40027",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1",
-                "psr/container": "^1.0",
-                "rdlowrey/auryn": "^1.1"
-            },
-            "provide": {
-                "psr/container-implementation": "^1.0"
-            },
-            "require-dev": {
-                "eloquent/phony-phpunit": "^3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Northwoods\\Container\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Woody Gilk",
-                    "email": "woody.gilk@gmail.com"
-                }
-            ],
-            "description": "Container wrapper for Auryn dependency injector",
-            "time": "2017-12-19T20:18:53+00:00"
         },
         {
             "name": "psr/container",
