@@ -2,7 +2,7 @@
     "name": "zegnat/website-starter",
     "description": "My minimum viable setup for starting a PHP project.",
     "type": "project",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "license": "0BSD",
     "authors": [
         {
@@ -17,7 +17,7 @@
         "zendframework/zend-diactoros": "^1.7",
         "mindplay/middleman": "^3.0",
         "middlewares/request-handler": "^0.5.0",
-        "northwoods/container": "^2.1",
+        "rdlowrey/auryn": "^1.4",
         "middlewares/fast-route": "^0.9.0"
     },
     "require-dev": {
