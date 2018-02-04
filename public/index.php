@@ -12,6 +12,18 @@ $injector->define(
     })]
 );
 
+$middlewares = require '../config/middlewares.php';
+$middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use ($injector) {
+    $handler = $request->getAttribute('request-handler');
+    if (is_string($handler) && class_exists($handler)) {
+        $handler = $injector->make($handler);
+    }
+    if ($handler instanceof Interop\Http\Server\RequestHandlerInterface) {
+        return $handler->handle($request);
+    }
+    throw new RuntimeException(sprintf('Invalid request handler: %s', gettype($handler)));
+};
+
 (new Zend\Diactoros\Response\SapiEmitter)
     ->emit((new mindplay\middleman\Dispatcher(
         require '../config/middlewares.php',
