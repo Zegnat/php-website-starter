@@ -4,13 +4,16 @@ declare(strict_types = 1);
 
 require '../vendor/autoload.php';
 
-$injector = new Auryn\Injector();
-$injector->define(
-    Middlewares\Fastroute::class,
-    [':router' => FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-        require '../config/routes.php';
-    })]
-);
+$injector = (function ($i) {
+    $i->define(
+        Middlewares\Fastroute::class,
+        [':router' => FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
+            require '../config/routes.php';
+        })]
+    );
+    require '../config/injector.php';
+    return $i;
+})(new Auryn\Injector());
 
 $middlewares = require '../config/middlewares.php';
 $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use ($injector) {
