@@ -25,13 +25,14 @@ $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use
 };
 
 (new Zend\Diactoros\Response\SapiEmitter)
-    ->emit((new mindplay\middleman\Dispatcher(
-        require '../config/middlewares.php',
-        function ($middleware) use ($injector) {
-            if (is_string($middleware)) {
-                return $injector->make($middleware);
+    ->emit(
+        (new mindplay\middleman\Dispatcher(
+            $middlewares,
+            function ($middleware) use ($injector) {
+                if (is_string($middleware)) {
+                    return $injector->make($middleware);
+                }
+                return $middleware;
             }
-            return $middleware;
-        }
-    ))->dispatch(Zend\Diactoros\ServerRequestFactory::fromGlobals())
-);
+        ))->dispatch(Zend\Diactoros\ServerRequestFactory::fromGlobals())
+    );
