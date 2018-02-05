@@ -21,7 +21,7 @@ $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use
     if (is_string($handler) && class_exists($handler)) {
         $handler = $injector->make($handler);
     }
-    if ($handler instanceof Interop\Http\Server\RequestHandlerInterface) {
+    if ($handler instanceof Psr\Http\Server\RequestHandlerInterface) {
         return $handler->handle($request);
     }
     throw new RuntimeException(sprintf('Invalid request handler: %s', gettype($handler)));
@@ -29,13 +29,22 @@ $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use
 
 (new Zend\Diactoros\Response\SapiEmitter)
     ->emit(
-        (new mindplay\middleman\Dispatcher(
+        (new Middleland\Dispatcher(
             $middlewares,
-            function ($middleware) use ($injector) {
-                if (is_string($middleware)) {
-                    return $injector->make($middleware);
+            new class($injector) implements Psr\Container\ContainerInterface {
+                private $injector;
+                public function __construct($injector)
+                {
+                    $this->injector = $injector;
                 }
-                return $middleware;
+                public function get($id)
+                {
+                    return $this->injector->make($id);
+                }
+                public function has($id)
+                {
+                    return true;
+                }
             }
         ))->dispatch(Zend\Diactoros\ServerRequestFactory::fromGlobals())
     );

@@ -27,7 +27,7 @@ $ composer create-project zegnat/website-starter
    a container.
 2. Using [Diactoros][] to only have to work with
    [PSR-7 Requests and Responses][PSR-7].
-3. Using [Middleman][] to run through all configured
+3. Using [Middleland][] to run through all configured
    [PSR-15 Middlewares][PSR-15].
 4. Using [FastRoute][] to parse requested URIs and find the matching
    [PSR-15 RequestHandlers][PSR-15].
@@ -37,11 +37,11 @@ $ composer create-project zegnat/website-starter
 [Auryn]: https://github.com/rdlowrey/auryn
 [Diactoros]: https://zendframework.github.io/zend-diactoros/
 [FastRoute]: https://github.com/nikic/FastRoute
-[Middleman]: https://github.com/mindplay-dk/middleman
+[Middleland]: https://github.com/oscarotero/middleland
 [PHP_CodeSniffer]: https://github.com/squizlabs/PHP_CodeSniffer
 [PSR-2]: http://www.php-fig.org/psr/psr-2/
 [PSR-7]: http://www.php-fig.org/psr/psr-7/
-[PSR-15]: https://github.com/php-fig/fig-standards/blob/master/proposed/http-handlers/request-handlers.md
+[PSR-15]: https://www.php-fig.org/psr/psr-15/
 
 ## License
 
