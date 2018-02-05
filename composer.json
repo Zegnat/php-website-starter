@@ -14,15 +14,18 @@
         "psr-4": {"app\\": "app/"}
     },
     "require": {
-        "zendframework/zend-diactoros": "^1.7",
+        "middlewares/fast-route": "^1.0",
         "oscarotero/middleland": "^1.0",
         "rdlowrey/auryn": "^1.4",
-        "middlewares/fast-route": "^1.0"
+        "zendframework/zend-diactoros": "^1.7"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.2"
     },
     "scripts": {
         "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 app config public"
+    },
+    "config": {
+        "sort-packages": true
     }
 }
