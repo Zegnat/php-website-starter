@@ -2,7 +2,7 @@
     "name": "zegnat/website-starter",
     "description": "My minimum viable setup for starting a PHP project.",
     "type": "project",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "license": "0BSD",
     "authors": [
         {
