@@ -27,6 +27,8 @@ $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use
     throw new RuntimeException(sprintf('Invalid request handler: %s', gettype($handler)));
 };
 
+$request = $injector->make(Nyholm\Psr7Server\ServerRequestCreator::class);
+
 (new Zend\HttpHandlerRunner\Emitter\SapiEmitter)
     ->emit(
         (new Middleland\Dispatcher(
@@ -46,5 +48,12 @@ $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use
                     return true;
                 }
             }
-        ))->dispatch(Zend\Diactoros\ServerRequestFactory::fromGlobals())
+        ))->dispatch($request->fromArrays(
+            $_SERVER,
+            function_exists('getallheaders') ? getallheaders() : $request->getHeadersFromServer($_SERVER),
+            $_COOKIE,
+            $_GET,
+            $_POST,
+            $_FILES
+        ))
     );
