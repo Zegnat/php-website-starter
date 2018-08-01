@@ -17,7 +17,8 @@
         "middlewares/fast-route": "^1.0",
         "oscarotero/middleland": "^1.0",
         "rdlowrey/auryn": "^1.4",
-        "zendframework/zend-diactoros": "^1.8"
+        "zendframework/zend-diactoros": "^1.8",
+        "zendframework/zend-httphandlerrunner": "^1.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.3"

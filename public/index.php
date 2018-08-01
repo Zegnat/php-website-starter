@@ -27,7 +27,7 @@ $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use
     throw new RuntimeException(sprintf('Invalid request handler: %s', gettype($handler)));
 };
 
-(new Zend\Diactoros\Response\SapiEmitter)
+(new Zend\HttpHandlerRunner\Emitter\SapiEmitter)
     ->emit(
         (new Middleland\Dispatcher(
             $middlewares,
