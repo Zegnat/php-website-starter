@@ -2,6 +2,10 @@
 
 // Configure PSR-17 factories:
 $i->alias(
+    Psr\Http\Message\ResponseFactoryInterface::class,
+    Http\Factory\Diactoros\ResponseFactory::class
+);
+$i->alias(
     Psr\Http\Message\ServerRequestFactoryInterface::class,
     Http\Factory\Diactoros\ServerRequestFactory::class
 );
