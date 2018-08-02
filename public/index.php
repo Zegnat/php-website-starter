@@ -54,6 +54,7 @@ $request = $injector->make(Nyholm\Psr7Server\ServerRequestCreator::class);
             $_COOKIE,
             $_GET,
             $_POST,
-            $_FILES
+            $_FILES,
+            fopen('php://input', 'r')
         ))
     );
