@@ -15,8 +15,8 @@
     },
     "require": {
         "http-interop/http-factory-diactoros": "^1.0",
-        "middlewares/fast-route": "^1.0",
-        "nyholm/psr7-server": "^0.2.0",
+        "middlewares/fast-route": "dev-master#422ef73bae0afb0419ba01b5444cfb5c6349c964",
+        "nyholm/psr7-server": "dev-master#58111c55ff168f830a6d4c7d674ed3630fc1a7cb",
         "oscarotero/middleland": "^1.0",
         "rdlowrey/auryn": "^1.4",
         "zendframework/zend-diactoros": "^1.8",

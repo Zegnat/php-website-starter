@@ -4,61 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5748b52614fe9592992fcbfc82781bdf",
+    "content-hash": "bbe09c8dcacead91f8c4fdb05803e865",
     "packages": [
-        {
-            "name": "http-interop/http-factory",
-            "version": "0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/http-interop/http-factory.git",
-                "reference": "c2587cc0a6f74987fefb5b8074acfd32c69a4b0f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/http-interop/http-factory/zipball/c2587cc0a6f74987fefb5b8074acfd32c69a4b0f",
-                "reference": "c2587cc0a6f74987fefb5b8074acfd32c69a4b0f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "psr/http-message": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Interop\\Http\\Factory\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for HTTP message factories",
-            "keywords": [
-                "factory",
-                "http",
-                "message",
-                "psr",
-                "psr-17",
-                "psr-7",
-                "request",
-                "response"
-            ],
-            "abandoned": "psr/http-factory",
-            "time": "2017-03-24T14:48:51+00:00"
-        },
         {
             "name": "http-interop/http-factory-diactoros",
             "version": "1.0.0",
@@ -111,27 +58,27 @@
         },
         {
             "name": "middlewares/fast-route",
-            "version": "v1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/middlewares/fast-route.git",
-                "reference": "5ab5e33bc0fb5e7dcd5c347e457701af2251ac5b"
+                "reference": "422ef73bae0afb0419ba01b5444cfb5c6349c964"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/middlewares/fast-route/zipball/5ab5e33bc0fb5e7dcd5c347e457701af2251ac5b",
-                "reference": "5ab5e33bc0fb5e7dcd5c347e457701af2251ac5b",
+                "url": "https://api.github.com/repos/middlewares/fast-route/zipball/422ef73bae0afb0419ba01b5444cfb5c6349c964",
+                "reference": "422ef73bae0afb0419ba01b5444cfb5c6349c964",
                 "shasum": ""
             },
             "require": {
-                "middlewares/utils": "^1.0",
+                "middlewares/utils": "^2.1",
                 "nikic/fast-route": "^1.0",
                 "php": "^7.0",
                 "psr/http-server-middleware": "^1.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.0",
-                "phpunit/phpunit": "^6.0",
+                "phpunit/phpunit": "^6.0|^7.0",
                 "squizlabs/php_codesniffer": "^3.0",
                 "zendframework/zend-diactoros": "^1.3"
             },
@@ -157,33 +104,33 @@
                 "router",
                 "server"
             ],
-            "time": "2018-01-27T11:51:30+00:00"
+            "time": "2018-08-04T10:41:48+00:00"
         },
         {
             "name": "middlewares/utils",
-            "version": "v1.0.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/middlewares/utils.git",
-                "reference": "d36b0b8bee8548c45b34e64891b084742a640cf0"
+                "reference": "5b9396c94c260d8bc53dcf4b8f24d726d803b846"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/middlewares/utils/zipball/d36b0b8bee8548c45b34e64891b084742a640cf0",
-                "reference": "d36b0b8bee8548c45b34e64891b084742a640cf0",
+                "url": "https://api.github.com/repos/middlewares/utils/zipball/5b9396c94c260d8bc53dcf4b8f24d726d803b846",
+                "reference": "5b9396c94c260d8bc53dcf4b8f24d726d803b846",
                 "shasum": ""
             },
             "require": {
-                "http-interop/http-factory": "^0.3",
                 "php": "^7.0",
                 "psr/container": "^1.0",
+                "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.0",
                 "psr/http-server-middleware": "^1.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.0",
                 "guzzlehttp/psr7": "^1.3",
-                "phpunit/phpunit": "^6.0",
+                "phpunit/phpunit": "^6.0|^7.0",
                 "slim/slim": "^3.5",
                 "squizlabs/php_codesniffer": "^3.0",
                 "zendframework/zend-diactoros": "^1.3"
@@ -205,9 +152,10 @@
                 "http",
                 "middleware",
                 "psr-15",
+                "psr-17",
                 "psr-7"
             ],
-            "time": "2018-01-24T09:54:56+00:00"
+            "time": "2018-08-02T18:26:37+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -257,16 +205,16 @@
         },
         {
             "name": "nyholm/psr7-server",
-            "version": "0.2.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nyholm/psr7-server.git",
-                "reference": "457d4afcece317ec4a80098606e421dc008da545"
+                "reference": "58111c55ff168f830a6d4c7d674ed3630fc1a7cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nyholm/psr7-server/zipball/457d4afcece317ec4a80098606e421dc008da545",
-                "reference": "457d4afcece317ec4a80098606e421dc008da545",
+                "url": "https://api.github.com/repos/Nyholm/psr7-server/zipball/58111c55ff168f830a6d4c7d674ed3630fc1a7cb",
+                "reference": "58111c55ff168f830a6d4c7d674ed3630fc1a7cb",
                 "shasum": ""
             },
             "require": {
@@ -276,7 +224,7 @@
             },
             "require-dev": {
                 "nyholm/nsa": "^1.1",
-                "nyholm/psr7": "^1.0@dev",
+                "nyholm/psr7": "^1.0",
                 "phpunit/phpunit": "^7.0"
             },
             "type": "library",
@@ -293,6 +241,10 @@
                 {
                     "name": "Tobias Nyholm",
                     "email": "tobias.nyholm@gmail.com"
+                },
+                {
+                    "name": "Martijn van der Ven",
+                    "email": "martijn@vanderven.se"
                 }
             ],
             "description": "Helper classes to handle PSR-7 server requests",
@@ -301,7 +253,7 @@
                 "psr-17",
                 "psr-7"
             ],
-            "time": "2018-08-01T07:24:50+00:00"
+            "time": "2018-08-05T10:16:02+00:00"
         },
         {
             "name": "oscarotero/middleland",
@@ -675,16 +627,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.8.3",
+            "version": "1.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "72c13834fb3db2a962e913758b384ff2e6425d6e"
+                "reference": "736ffa7c2bfa4a60e8a10acb316fa2ac456c5fba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/72c13834fb3db2a962e913758b384ff2e6425d6e",
-                "reference": "72c13834fb3db2a962e913758b384ff2e6425d6e",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/736ffa7c2bfa4a60e8a10acb316fa2ac456c5fba",
+                "reference": "736ffa7c2bfa4a60e8a10acb316fa2ac456c5fba",
                 "shasum": ""
             },
             "require": {
@@ -734,7 +686,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2018-07-24T21:54:38+00:00"
+            "time": "2018-08-01T13:47:49+00:00"
         },
         {
             "name": "zendframework/zend-httphandlerrunner",
@@ -846,7 +798,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "middlewares/fast-route": 20,
+        "nyholm/psr7-server": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
