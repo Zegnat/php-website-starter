@@ -1,5 +1,5 @@
 <?php
 
 return [
-    Middlewares\FastRoute::class,
+    app\Middleware\FastRoute::class,
 ];

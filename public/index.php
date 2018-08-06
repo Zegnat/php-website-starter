@@ -6,7 +6,7 @@ require '../vendor/autoload.php';
 
 $injector = (function ($i) {
     $i->define(
-        Middlewares\Fastroute::class,
+        app\Middleware\FastRoute::class,
         [':router' => FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
             require '../config/routes.php';
         })]
