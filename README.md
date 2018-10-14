@@ -38,15 +38,13 @@ $ composer create-project zegnat/website-starter
 
 ## PSR-7 & PSR-17 Providers
 
-By default this project loads [Diactoros][] for its [PSR-7][] objects. This
-depends on [a third-party implementation][http-factory-diactoros] for the
+By default this project loads [Diactoros][] for its [PSR-7][] objects and
 matching [PSR-17][] factories.
 
 The providers can easily be swapped for a different set of implementations.
-Simply remove the dependencies from composer and add a new one. Example:
+Simply remove the dependency from composer and add a new one. Example:
 
 ```bash
-$ composer remove http-interop/http-factory-diactoros
 $ composer remove zendframework/zend-diactoros
 $ composer require nyholm/psr7
 ```
@@ -58,7 +56,6 @@ them can be defined as `Nyholm\Psr7\Factory\Psr17Factory::class`.
 [Auryn]: https://github.com/rdlowrey/auryn
 [Diactoros]: https://zendframework.github.io/zend-diactoros/
 [FastRoute]: https://github.com/nikic/FastRoute
-[http-factory-diactoros]: https://github.com/http-interop/http-factory-diactoros
 [Middleland]: https://github.com/oscarotero/middleland
 [nyholm/psr7]: https://github.com/Nyholm/psr7
 [nyholm/psr7-server]: https://github.com/Nyholm/psr7-server
