@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43d7f1c29f32b39cf0d25feda458d55d",
+    "content-hash": "81983163873e391e4681550d3bad99bf",
     "packages": [
         {
             "name": "middlewares/fast-route",
