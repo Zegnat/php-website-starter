@@ -6,7 +6,7 @@ require '../vendor/autoload.php';
 
 $injector = (function ($i) {
     $i->define(
-        Middlewares\Fastroute::class,
+        Middlewares\FastRoute::class,
         [':router' => FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
             require '../config/routes.php';
         })]
@@ -27,7 +27,7 @@ $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use
     throw new RuntimeException(sprintf('Invalid request handler: %s', gettype($handler)));
 };
 
-(new Zend\Diactoros\Response\SapiEmitter)
+(new Zend\HttpHandlerRunner\Emitter\SapiEmitter)
     ->emit(
         (new Middleland\Dispatcher(
             $middlewares,
@@ -46,5 +46,5 @@ $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use
                     return true;
                 }
             }
-        ))->dispatch(Zend\Diactoros\ServerRequestFactory::fromGlobals())
+        ))->dispatch($injector->make(Nyholm\Psr7Server\ServerRequestCreator::class)->fromGlobals())
     );
