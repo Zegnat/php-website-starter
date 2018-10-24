@@ -14,7 +14,7 @@
         "psr-4": {"app\\": "app/"}
     },
     "require": {
-        "middlewares/fast-route": "dev-master#c82a003912e7aff629243c4a75fb1b5d55e372ba",
+        "middlewares/fast-route": "^1.2",
         "nyholm/psr7-server": "^0.3.0",
         "oscarotero/middleland": "^1.0",
         "rdlowrey/auryn": "^1.4",

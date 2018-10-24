@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28e1ac067c9cbd0b1d321af0454f9fd3",
+    "content-hash": "43d7f1c29f32b39cf0d25feda458d55d",
     "packages": [
         {
             "name": "middlewares/fast-route",
-            "version": "dev-master",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/middlewares/fast-route.git",
-                "reference": "c82a003912e7aff629243c4a75fb1b5d55e372ba"
+                "reference": "b30a920a028bd1fd3b8014358c8251d06bfda799"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/middlewares/fast-route/zipball/c82a003912e7aff629243c4a75fb1b5d55e372ba",
-                "reference": "c82a003912e7aff629243c4a75fb1b5d55e372ba",
+                "url": "https://api.github.com/repos/middlewares/fast-route/zipball/b30a920a028bd1fd3b8014358c8251d06bfda799",
+                "reference": "b30a920a028bd1fd3b8014358c8251d06bfda799",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
                 "router",
                 "server"
             ],
-            "time": "2018-10-12T11:40:36+00:00"
+            "time": "2018-10-22T18:56:28+00:00"
         },
         {
             "name": "middlewares/utils",
@@ -752,9 +752,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "middlewares/fast-route": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
