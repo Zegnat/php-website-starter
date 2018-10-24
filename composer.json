@@ -14,12 +14,11 @@
         "psr-4": {"app\\": "app/"}
     },
     "require": {
-        "http-interop/http-factory-diactoros": "^1.0",
-        "middlewares/fast-route": "^1.0",
-        "nyholm/psr7-server": "^0.2.0",
+        "middlewares/fast-route": "^1.2",
+        "nyholm/psr7-server": "^0.3.0",
         "oscarotero/middleland": "^1.0",
         "rdlowrey/auryn": "^1.4",
-        "zendframework/zend-diactoros": "^1.8",
+        "zendframework/zend-diactoros": "^2.0",
         "zendframework/zend-httphandlerrunner": "^1.0"
     },
     "require-dev": {

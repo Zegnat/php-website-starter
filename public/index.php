@@ -6,7 +6,7 @@ require '../vendor/autoload.php';
 
 $injector = (function ($i) {
     $i->define(
-        Middlewares\Fastroute::class,
+        Middlewares\FastRoute::class,
         [':router' => FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
             require '../config/routes.php';
         })]
@@ -27,8 +27,6 @@ $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use
     throw new RuntimeException(sprintf('Invalid request handler: %s', gettype($handler)));
 };
 
-$request = $injector->make(Nyholm\Psr7Server\ServerRequestCreator::class);
-
 (new Zend\HttpHandlerRunner\Emitter\SapiEmitter)
     ->emit(
         (new Middleland\Dispatcher(
@@ -48,13 +46,5 @@ $request = $injector->make(Nyholm\Psr7Server\ServerRequestCreator::class);
                     return true;
                 }
             }
-        ))->dispatch($request->fromArrays(
-            $_SERVER,
-            function_exists('getallheaders') ? getallheaders() : $request->getHeadersFromServer($_SERVER),
-            $_COOKIE,
-            $_GET,
-            $_POST,
-            $_FILES,
-            fopen('php://input', 'r')
-        ))
+        ))->dispatch($injector->make(Nyholm\Psr7Server\ServerRequestCreator::class)->fromGlobals())
     );
