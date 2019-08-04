@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 // Configure PSR-17 factories:
 $i->alias(
     Psr\Http\Message\ResponseFactoryInterface::class,
