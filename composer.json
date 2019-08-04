@@ -22,10 +22,11 @@
         "zendframework/zend-httphandlerrunner": "^1.0"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.4"
+        "friendsofphp/php-cs-fixer": "^2.15"
     },
     "scripts": {
-        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 app config public",
+        "check-style": "php-cs-fixer fix --dry-run -vvv",
+        "fix-style": "php-cs-fixer fix",
         "serve": "@php -S localhost:8000 -t public/"
     },
     "config": {
