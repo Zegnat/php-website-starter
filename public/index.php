@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 require '../vendor/autoload.php';
 
@@ -12,35 +12,39 @@ $injector = (function ($i) {
         })]
     );
     require '../config/injector.php';
+
     return $i;
 })(new Auryn\Injector());
 
 $middlewares = require '../config/middlewares.php';
 $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use ($injector) {
     $handler = $request->getAttribute('request-handler');
-    if (is_string($handler) && class_exists($handler)) {
+    if (\is_string($handler) && \class_exists($handler)) {
         $handler = $injector->make($handler);
     }
     if ($handler instanceof Psr\Http\Server\RequestHandlerInterface) {
         return $handler->handle($request);
     }
-    throw new RuntimeException(sprintf('Invalid request handler: %s', gettype($handler)));
+    throw new RuntimeException(\sprintf('Invalid request handler: %s', \gettype($handler)));
 };
 
-(new Zend\HttpHandlerRunner\Emitter\SapiEmitter)
+(new Zend\HttpHandlerRunner\Emitter\SapiEmitter())
     ->emit(
         (new Middleland\Dispatcher(
             $middlewares,
             new class($injector) implements Psr\Container\ContainerInterface {
                 private $injector;
+
                 public function __construct($injector)
                 {
                     $this->injector = $injector;
                 }
+
                 public function get($id)
                 {
                     return $this->injector->make($id);
                 }
+
                 public function has($id)
                 {
                     return true;

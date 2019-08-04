@@ -32,9 +32,11 @@ $ composer create-project zegnat/website-starter
    [PSR-15 Middlewares][PSR-15].
 5. Using [FastRoute][] to parse requested URIs and find the matching
    [PSR-15 RequestHandlers][PSR-15].
-6. Using [PHP_CodeSniffer][] to check all code against the
-   [PSR-2 Coding Style Guide][PSR-2].
-7. Using a [Zend Emitter][] to output a final response to the web server.
+6. Using a [Zend Emitter][] to output a final response to the web server.
+7. Using [PHP CS Fixer][] to check all code against a somewhat opinionated set
+   of style rules based on the [Symfony Coding Standards][].
+8. Using [PHPUnit][] to test all classes used in the project and generate
+   coverage reports using [`phpdbg`][].
 
 ## PSR-7 & PSR-17 Providers
 
@@ -59,11 +61,13 @@ them can be defined as `Nyholm\Psr7\Factory\Psr17Factory::class`.
 [Middleland]: https://github.com/oscarotero/middleland
 [nyholm/psr7]: https://github.com/Nyholm/psr7
 [nyholm/psr7-server]: https://github.com/Nyholm/psr7-server
-[PHP_CodeSniffer]: https://github.com/squizlabs/PHP_CodeSniffer
-[PSR-2]: http://www.php-fig.org/psr/psr-2/
+[PHP CS Fixer]: https://github.com/FriendsOfPHP/PHP-CS-Fixer
+[`phpdbg`]: https://www.php.net/manual/en/book.phpdbg.php
+[PHPUnit]: https://phpunit.de/
 [PSR-7]: http://www.php-fig.org/psr/psr-7/
 [PSR-15]: https://www.php-fig.org/psr/psr-15/
 [PSR-17]: https://www.php-fig.org/psr/psr-17/
+[Symfony Coding Standards]: https://symfony.com/doc/current/contributing/code/standards.html
 [Zend Emitter]: https://docs.zendframework.com/zend-httphandlerrunner/emitters/
 
 ## License
