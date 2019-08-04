@@ -22,11 +22,13 @@
         "zendframework/zend-httphandlerrunner": "^1.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.15"
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "phpunit/phpunit": "^8.3"
     },
     "scripts": {
         "check-style": "php-cs-fixer fix --dry-run -vvv",
         "fix-style": "php-cs-fixer fix",
+        "test": "phpdbg -qrr vendor/bin/phpunit",
         "serve": "@php -S localhost:8000 -t public/"
     },
     "config": {
