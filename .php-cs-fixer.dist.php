@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-$config = PhpCsFixer\Config::create()
+$config = new PhpCsFixer\Config();
+$config
     ->setRiskyAllowed(true)
     ->setUsingCache(false)
     ->setRules([
         '@Symfony' => true,
         '@Symfony:risky' => true,
         'array_syntax' => ['syntax' => 'short'],
-        'native_function_invocation' => true,
+        'native_function_invocation' => ['include' => ['@all'], 'scope' => 'all', 'strict' => true],
         'ordered_imports' => true,
         'declare_strict_types' => true,
         'single_import_per_statement' => false,
@@ -20,7 +21,7 @@ $config = PhpCsFixer\Config::create()
         PhpCsFixer\Finder::create()
             ->in(__DIR__)
             ->ignoreDotFiles(false)
-            ->name(['.php_cs.dist'])
+            ->name(['.php-cs-fixer.dist.php'])
     )
 ;
 

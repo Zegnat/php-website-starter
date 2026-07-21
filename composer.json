@@ -14,21 +14,25 @@
         "psr-4": {"app\\": "app/"}
     },
     "require": {
-        "laminas/laminas-diactoros": "^2.2",
-        "laminas/laminas-httphandlerrunner": "^1.1",
-        "middlewares/fast-route": "^2.0",
-        "nyholm/psr7-server": "dev-parsedbody-default-null",
-        "oscarotero/middleland": "^1.0",
-        "rdlowrey/auryn": "^1.4"
+        "php": "^8.2",
+        "laminas/laminas-diactoros": "^3.0",
+        "laminas/laminas-httphandlerrunner": "^2.0",
+        "middlewares/fast-route": "^2.1",
+        "oscarotero/middleland": "^1.0.3",
+        "php-di/php-di": "^7.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16",
-        "phpunit/phpunit": "^9.1"
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpunit/phpunit": "^11.0"
+    },
+    "suggest": {
+        "ext-pcov": "Enables code coverage for the coverage script (ext-xdebug also works)"
     },
     "scripts": {
         "check-style": "php-cs-fixer fix --dry-run -vvv",
         "fix-style": "php-cs-fixer fix",
-        "test": "phpdbg -qrr vendor/bin/phpunit",
+        "test": "phpunit",
+        "coverage": "phpunit --coverage-text",
         "serve": "@php -S localhost:8000 -t public/"
     },
     "config": {

@@ -11,7 +11,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class Home implements RequestHandlerInterface
 {
-    private $response;
+    private ResponseFactoryInterface $responseFactory;
 
     public function __construct(ResponseFactoryInterface $responseFactory)
     {
