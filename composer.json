@@ -25,10 +25,14 @@
         "friendsofphp/php-cs-fixer": "^3.95",
         "phpunit/phpunit": "^11.0"
     },
+    "suggest": {
+        "ext-pcov": "Enables code coverage for the coverage script (ext-xdebug also works)"
+    },
     "scripts": {
         "check-style": "php-cs-fixer fix --dry-run -vvv",
         "fix-style": "php-cs-fixer fix",
         "test": "phpunit",
+        "coverage": "phpunit --coverage-text",
         "serve": "@php -S localhost:8000 -t public/"
     },
     "config": {
