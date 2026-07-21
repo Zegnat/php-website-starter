@@ -20,7 +20,7 @@ $container = (function () use ($dispatcher) {
 })();
 
 $middlewares = require '../config/middlewares.php';
-$middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use ($container) {
+$middlewares[] = static function (Psr\Http\Message\ServerRequestInterface $request) use ($container) {
     $handler = $request->getAttribute('request-handler');
     if (\is_string($handler) && \class_exists($handler)) {
         $handler = $container->get($handler);

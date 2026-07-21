@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace app\RequestHandler;
 
+use PHPUnit\Framework\Attributes\Depends;
+
 class HomeTest extends \PHPUnit\Framework\TestCase
 {
     public function testCanConstruct(): Home
@@ -14,10 +16,8 @@ class HomeTest extends \PHPUnit\Framework\TestCase
         return $home;
     }
 
-    /**
-     * @depends testCanConstruct
-     */
-    public function testReturnsOK(Home $home)
+    #[Depends('testCanConstruct')]
+    public function testReturnsOK(Home $home): void
     {
         $response = $home->handle(new \Laminas\Diactoros\ServerRequest());
         $this->assertInstanceOf(\Psr\Http\Message\ResponseInterface::class, $response);
