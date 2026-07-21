@@ -36,5 +36,5 @@ $middlewares[] = static function (Psr\Http\Message\ServerRequestInterface $reque
         (new Middleland\Dispatcher(
             $middlewares,
             $container
-        ))->dispatch($container->get(Nyholm\Psr7Server\ServerRequestCreator::class)->fromGlobals())
+        ))->dispatch(Laminas\Diactoros\ServerRequestFactory::fromGlobals())
     );

@@ -18,7 +18,6 @@
         "laminas/laminas-diactoros": "^3.0",
         "laminas/laminas-httphandlerrunner": "^2.0",
         "middlewares/fast-route": "^2.1",
-        "nyholm/psr7-server": "^1.1",
         "oscarotero/middleland": "^1.0.3",
         "php-di/php-di": "^7.0"
     },
