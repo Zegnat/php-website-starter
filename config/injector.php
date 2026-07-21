@@ -5,18 +5,18 @@ declare(strict_types=1);
 // Configure PSR-17 factories:
 return [
     Psr\Http\Message\ResponseFactoryInterface::class => DI\get(
-        Zend\Diactoros\ResponseFactory::class
+        Laminas\Diactoros\ResponseFactory::class
     ),
     Psr\Http\Message\ServerRequestFactoryInterface::class => DI\get(
-        Zend\Diactoros\ServerRequestFactory::class
+        Laminas\Diactoros\ServerRequestFactory::class
     ),
     Psr\Http\Message\StreamFactoryInterface::class => DI\get(
-        Zend\Diactoros\StreamFactory::class
+        Laminas\Diactoros\StreamFactory::class
     ),
     Psr\Http\Message\UploadedFileFactoryInterface::class => DI\get(
-        Zend\Diactoros\UploadedFileFactory::class
+        Laminas\Diactoros\UploadedFileFactory::class
     ),
     Psr\Http\Message\UriFactoryInterface::class => DI\get(
-        Zend\Diactoros\UriFactory::class
+        Laminas\Diactoros\UriFactory::class
     ),
 ];

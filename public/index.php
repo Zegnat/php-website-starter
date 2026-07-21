@@ -31,7 +31,7 @@ $middlewares[] = function (Psr\Http\Message\ServerRequestInterface $request) use
     throw new RuntimeException(\sprintf('Invalid request handler: %s', \gettype($handler)));
 };
 
-(new Zend\HttpHandlerRunner\Emitter\SapiEmitter())
+(new Laminas\HttpHandlerRunner\Emitter\SapiEmitter())
     ->emit(
         (new Middleland\Dispatcher(
             $middlewares,
