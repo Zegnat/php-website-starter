@@ -19,7 +19,7 @@
         "middlewares/fast-route": "^2.0",
         "nyholm/psr7-server": "dev-parsedbody-default-null",
         "oscarotero/middleland": "^1.0",
-        "rdlowrey/auryn": "^1.4"
+        "php-di/php-di": "^6.4"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",

@@ -3,23 +3,20 @@
 declare(strict_types=1);
 
 // Configure PSR-17 factories:
-$i->alias(
-    Psr\Http\Message\ResponseFactoryInterface::class,
-    Zend\Diactoros\ResponseFactory::class
-);
-$i->alias(
-    Psr\Http\Message\ServerRequestFactoryInterface::class,
-    Zend\Diactoros\ServerRequestFactory::class
-);
-$i->alias(
-    Psr\Http\Message\StreamFactoryInterface::class,
-    Zend\Diactoros\StreamFactory::class
-);
-$i->alias(
-    Psr\Http\Message\UploadedFileFactoryInterface::class,
-    Zend\Diactoros\UploadedFileFactory::class
-);
-$i->alias(
-    Psr\Http\Message\UriFactoryInterface::class,
-    Zend\Diactoros\UriFactory::class
-);
+return [
+    Psr\Http\Message\ResponseFactoryInterface::class => DI\get(
+        Zend\Diactoros\ResponseFactory::class
+    ),
+    Psr\Http\Message\ServerRequestFactoryInterface::class => DI\get(
+        Zend\Diactoros\ServerRequestFactory::class
+    ),
+    Psr\Http\Message\StreamFactoryInterface::class => DI\get(
+        Zend\Diactoros\StreamFactory::class
+    ),
+    Psr\Http\Message\UploadedFileFactoryInterface::class => DI\get(
+        Zend\Diactoros\UploadedFileFactory::class
+    ),
+    Psr\Http\Message\UriFactoryInterface::class => DI\get(
+        Zend\Diactoros\UriFactory::class
+    ),
+];
